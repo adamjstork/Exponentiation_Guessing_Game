@@ -1,0 +1,457 @@
+import sys, time, random
+
+
+
+def intro():
+
+
+
+    version  = "1.00b"
+
+
+
+    time.sleep(0.5)
+    print("Exponentiation Guessing Game")
+
+    time.sleep(1)
+    print(version, "      Adam Stork © 2020 \n\n\n", sep = "")
+
+    time.sleep(2)
+    print("> Welcome and have fun! \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Task: \n")
+
+    time.sleep(2)
+    print("> Guess how many times 2 needs to be")
+
+    time.sleep(1)
+    print("  raised to reach, but not exceed,")
+    
+    time.sleep(1)
+    print("  the generated number as closely as")
+
+    time.sleep(1)
+    print("  possible. \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Example: \n")
+
+    time.sleep(2)
+    print("> Generated number:   15 \n")
+
+    time.sleep(1)
+    print("> Exponentiation #01: 2^1 = 2 \n")
+
+    time.sleep(1)
+    print("  Exponentiation #02: 2^2 = 4 \n")
+
+    time.sleep(1)
+    print("  Exponentiation #03: 2^3 = 8 \n")
+
+    time.sleep(2)
+    print("> Correct answer:     3 \n")
+
+    time.sleep(2)
+    print("> Another exponentiation (2^4) would")
+
+    time.sleep(1)
+    print("  result in 16 and therefore exceed")
+
+    time.sleep(1)
+    print("  the generated number. \n\n\n")
+
+
+
+def math():
+
+
+
+    # iteration
+    i        = 1
+
+    # base number
+    num      = 2
+
+    # randomly generated number
+    num_rand = random.randrange(1000, 1000000, 2)
+
+
+
+    time.sleep(2)
+    print("Let the (guessing) games begin! \n")
+
+    time.sleep(2)
+    print("> Generated number:  ", f"{num_rand:,} \n")
+
+
+
+    while True:
+
+
+
+        try:
+
+            time.sleep(2)
+            guess = int(input("> Your guess:         "))
+
+
+
+        except ValueError:
+
+            time.sleep(0.5)
+            print("")
+            print("> Invalid input.")
+
+            time.sleep(0.5)
+            print("  Only integers are accepted.")
+
+            time.sleep(0.5)
+            print("  Please try again. \n\n\n")
+
+            continue
+
+
+
+        else:
+
+            print("\n\n")
+
+            break
+
+
+
+    time.sleep(2)
+    print("Running calculations... \n")
+
+
+
+    while (num ** i) <= num_rand:
+
+
+
+        # exponentiation 1 (leading zero and angle bracket)
+        if i == 1:
+
+            time.sleep(0.5)
+            print("> Exponentiation #", "{:02d}".format(i), ":", f" {num:,}", "^", i, " = ", f"{num ** i:,} \n", sep = "")
+
+
+
+        # exponentiation 2-9 (leading zeroes but no angle brackets)
+        elif i >= 2 and i <= 9:
+
+            time.sleep(0.5)
+            print("  Exponentiation #", "{:02d}".format(i), ":", f" {num:,}", "^", i, " = ", f"{num ** i:,} \n", sep = "")
+
+
+
+        # exponentiation 10+ (no leading zeroes and no angle brackets)
+        elif i >= 10:
+              
+            time.sleep(0.5)
+            print("  Exponentiation #", i, ":", f" {num:,}", "^", i, " = ", f"{num ** i:,} \n", sep = "")
+
+
+                
+        i += 1
+
+
+
+    i -= 1
+
+
+
+    print("\n")
+
+
+
+    time.sleep(2)
+    print("Results: \n")
+
+    time.sleep(1.5)
+    print("> The answer is ", i, ".", sep = "")
+
+    time.sleep(1.5)
+    print("  Your guess was ", guess, ".", sep = "")
+
+
+
+    if guess == i:
+
+        time.sleep(1.5)
+        print("  You were spot on! Well done!")
+
+
+
+    elif guess > i:
+
+        time.sleep(1.5)
+        print("  You were off by ", guess - i, ".", sep = "")
+
+        if guess - i <= 1:
+
+            time.sleep(1.5)
+            print("  Pretty close though!")
+
+
+
+    elif guess < i:
+
+        time.sleep(1.5)
+        print("  You were off by ", i - guess, ".", sep = "")
+
+        if i - guess <= 1:
+
+            time.sleep(1.5)
+            print("  Pretty close though!")
+
+
+
+    else:
+
+        time.sleep(0.5)
+        print("")
+        print("> Unexpected error.")
+
+        time.sleep(0.5)
+        print("  Please report it via a message or comment.")
+
+        time.sleep(0.5)
+        print("  Thank you! \n")
+
+
+
+    print("\n\n")
+
+
+
+def next():
+
+    time.sleep(2)
+    print("> What next? \n\n")
+
+
+
+def about():
+
+
+
+    time.sleep(2)
+    print("About: \n")
+
+    time.sleep(1.5)
+    print("> The Exponentiation Guessing Game")
+
+    time.sleep(0.5)
+    print("  has been developed as my first")
+
+    time.sleep(0.5)
+    print("  Python 3 program. \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Author: \n")
+    
+    time.sleep(1.5)
+    print("> Adam Stork \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Version history: \n")
+
+    time.sleep(1.5)
+    print("> 1.00 (17/Oct/2020)")
+
+    time.sleep(0.5)
+    print("  release \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Known issues: \n")
+
+    time.sleep(1.5)
+    print("> some stability issues \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Plans for future development: \n")
+
+    time.sleep(1.5)
+    print("> improved stability")
+
+    time.sleep(1.5)
+    print("  superscripted exponent compatibility")
+    
+    time.sleep(0.5)
+    print("    across all IDE's")
+
+    time.sleep(1.5)
+    print("  guess precision score")
+    
+    time.sleep(1.5)
+    print("  more base numbers")
+    
+    time.sleep(1.5)
+    print("  more number systems \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Thanks: \n")
+
+    time.sleep(1.5)
+    print("> SoloLearn and its community")
+
+    time.sleep(1.5)
+    print("  You guys rock! \n\n\n")
+
+
+
+    time.sleep(2)
+    print("Special thanks")
+
+    time.sleep(1)
+    print("(in alphabetical order): \n")
+
+    time.sleep(1.5)
+    print("> Abhay")
+
+    time.sleep(1.5)
+    print("  codemonkey")
+
+    time.sleep(1.5)
+    print("  Jan Markus")
+
+    time.sleep(1.5)
+    print("  Lothar")
+
+    time.sleep(1.5)
+    print("  Slick \n\n\n")
+
+
+
+def cmds():
+
+    time.sleep(1)
+    print("Available commands: \n")
+
+    time.sleep(0.5)
+    print("> again")
+
+    time.sleep(0.5)
+    print("  help")
+
+    time.sleep(0.5)
+    print("  about")
+
+    time.sleep(0.5)
+    print("  exit")
+
+    print("\n")
+    cmd()
+
+
+
+def cmd():
+
+
+
+    while True:
+
+
+
+        time.sleep(1)
+        print("")
+        cmd = input("> Command:            ")
+        print("")
+
+
+
+        if cmd == "again" or cmd == "AGAIN" or cmd == "Again":
+
+            print("\n")
+            math()
+            next()
+            continue
+
+
+
+        elif cmd == "help" or cmd == "HELP" or cmd == "Help":
+
+            print("\n")
+            cmds()
+
+
+
+        elif cmd == "about" or cmd == "ABOUT" or cmd == "About":
+
+            print("\n")
+            about()
+            next()
+            continue
+
+
+
+        elif cmd == "exit" or cmd == "EXIT" or cmd == "Exit":
+
+            time.sleep(1)
+            print("\n")
+            print("> Preparing to exit...")
+
+            time.sleep(1.5)
+            print("  I hope you liked my program!")
+
+            time.sleep(1.5)
+            print("  Feel free to leave me feedback!")
+            
+            time.sleep(1.5)
+            print("  Thanks! \n\n\n")
+
+            time.sleep(2)
+
+            exit()
+
+
+
+        else:
+
+            time.sleep(0.5)
+            print("> Invalid command.")
+
+            time.sleep(0.5)
+            print("  Please try again. \n\n\n")
+
+            cmds()
+
+            continue
+
+
+
+        print("\n\n")
+
+
+
+intro()
+
+time.sleep(1)
+math()
+
+next()
+
+time.sleep(1)
+print("")
+cmds()
+
+
+
+time.sleep(2)
+print("\n\n\n")
